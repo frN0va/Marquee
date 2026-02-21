@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Analytics } from "@vercel/analytics/next"
 import { PUZZLES } from "./puzzles";
 
 interface Guess {
