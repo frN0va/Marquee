@@ -29,13 +29,35 @@ const MAX_GUESSES = 5;
 const STORAGE_KEY = "marquee_stats";
 const TODAY_KEY = "marquee_today";
 
+function seededRandom(seed: number): () => number {
+  let s = seed;
+  return () => {
+    s |= 0; s = s + 0x6d2b79f5 | 0;
+    let t = Math.imul(s ^ s >>> 15, 1 | s);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+
+function getShuffledOrder(): number[] {
+  const rng = seededRandom(0xDEADBEEF);
+  const indices = Array.from({ length: PUZZLES.length }, (_, i) => i);
+  for (let i = indices.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [indices[i], indices[j]] = [indices[j], indices[i]];
+  }
+  return indices;
+}
+
+const SHUFFLED_ORDER = getShuffledOrder();
+
 function getDailyIndex(): number {
   const urlIndex = new URLSearchParams(window.location.search).get("puzzle");
   if (urlIndex !== null) return parseInt(urlIndex) % PUZZLES.length;
   const start = new Date("2024-01-01").getTime();
   const today = new Date().setHours(0, 0, 0, 0);
   const diff = Math.floor((today - start) / (1000 * 60 * 60 * 24));
-  return diff % PUZZLES.length;
+  return SHUFFLED_ORDER[diff % PUZZLES.length];
 }
 
 function todayStr(): string {
@@ -96,6 +118,7 @@ export default function App() {
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [selectedSuggestion, setSelectedSuggestion] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
+  const suppressSuggestions = useRef(false);
 
   useEffect(() => { setTimeout(() => setMounted(true), 60); }, []);
 
@@ -109,6 +132,10 @@ export default function App() {
     if (!input.trim() || gameState !== "playing") {
       setSuggestions([]);
       setSelectedSuggestion(-1);
+      return;
+    }
+    if (suppressSuggestions.current) {
+      suppressSuggestions.current = false;
       return;
     }
     const q = normalize(input);
@@ -1021,15 +1048,15 @@ export default function App() {
                   placeholder="Type your movie guess…"
                   autoFocus
                   autoComplete="off"
+                  onBlur={() => setTimeout(() => { setSuggestions([]); setSelectedSuggestion(-1); }, 150)}
                 />
                 <button className="btn-guess" onClick={submitGuess}>Guess</button>
               </div>
               {suggestions.length > 0 && (
                 <div className="suggestions">
                   {suggestions.map((s, i) => {
-                    const q = normalize(input);
-                    const norm = normalize(s);
-                    const idx = norm.indexOf(q);
+                    // Case-insensitive highlight that works on the original string
+                    const idx = s.toLowerCase().indexOf(input.toLowerCase());
                     const display = idx >= 0
                       ? <>{s.slice(0, idx)}<span className="suggestion-highlight">{s.slice(idx, idx + input.length)}</span>{s.slice(idx + input.length)}</>
                       : <>{s}</>;
@@ -1037,7 +1064,7 @@ export default function App() {
                       <div
                         key={s}
                         className={`suggestion-item ${i === selectedSuggestion ? "active" : ""}`}
-                        onMouseDown={e => { e.preventDefault(); setInput(s); setSuggestions([]); inputRef.current?.focus(); }}
+                        onMouseDown={e => { e.preventDefault(); suppressSuggestions.current = true; setInput(s); setSuggestions([]); setSelectedSuggestion(-1); setTimeout(() => inputRef.current?.focus(), 0); }}
                       >
                         {display}
                       </div>
