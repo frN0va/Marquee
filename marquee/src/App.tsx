@@ -63,7 +63,7 @@ export default function App() {
   function copyResult() {
     const attempts = gameState === "won" ? guesses.length : "X";
     const squares = guesses.map(g => g.correct ? "🟩" : g.skipped ? "⬜" : "🟥").join("");
-    navigator.clipboard.writeText(`🎬 Marquee #${puzzleIndex + 1}\n${puzzle.emojis}\n${attempts}/${MAX_GUESSES} ${squares}\nMarquee.app`);
+    navigator.clipboard.writeText(`🎬 Marquee #${puzzleIndex + 1}\n${puzzle.emojis}\n${attempts}/${MAX_GUESSES} ${squares}\nhttps://marquee.n0va.tech`);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   }
