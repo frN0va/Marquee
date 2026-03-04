@@ -55,7 +55,7 @@ const SHUFFLED_ORDER = getShuffledOrder();
 
 function getDailyInfo(): { puzzleIndex: number; dayNumber: number } {
   const urlIndex = new URLSearchParams(window.location.search).get("puzzle");
-  const start = new Date("2024-01-01").getTime();
+  const start = new Date("2026-02-21").getTime();
   const today = new Date().setHours(0, 0, 0, 0);
   const diff = Math.floor((today - start) / (1000 * 60 * 60 * 24));
   if (urlIndex !== null) return { puzzleIndex: parseInt(urlIndex) % PUZZLES.length, dayNumber: diff + 1 };
