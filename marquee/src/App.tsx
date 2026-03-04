@@ -29,6 +29,7 @@ const MAX_GUESSES = 5;
 const STORAGE_KEY = "marquee_stats";
 const TODAY_KEY = "marquee_today";
 
+// Seeded PRNG
 function seededRandom(seed: number): () => number {
   let s = seed;
   return () => {
@@ -39,6 +40,7 @@ function seededRandom(seed: number): () => number {
   };
 }
 
+// Shuffle puzzle indices using a fixed seed so order is consistent for all users
 function getShuffledOrder(): number[] {
   const rng = seededRandom(0xDEADBEEF);
   const indices = Array.from({ length: PUZZLES.length }, (_, i) => i);
@@ -51,13 +53,13 @@ function getShuffledOrder(): number[] {
 
 const SHUFFLED_ORDER = getShuffledOrder();
 
-function getDailyIndex(): number {
+function getDailyInfo(): { puzzleIndex: number; dayNumber: number } {
   const urlIndex = new URLSearchParams(window.location.search).get("puzzle");
-  if (urlIndex !== null) return parseInt(urlIndex) % PUZZLES.length;
   const start = new Date("2024-01-01").getTime();
   const today = new Date().setHours(0, 0, 0, 0);
   const diff = Math.floor((today - start) / (1000 * 60 * 60 * 24));
-  return SHUFFLED_ORDER[diff % PUZZLES.length];
+  if (urlIndex !== null) return { puzzleIndex: parseInt(urlIndex) % PUZZLES.length, dayNumber: diff + 1 };
+  return { puzzleIndex: SHUFFLED_ORDER[diff % PUZZLES.length], dayNumber: diff + 1 };
 }
 
 function todayStr(): string {
@@ -85,7 +87,7 @@ function loadToday(): DayStats | null {
     const raw = localStorage.getItem(TODAY_KEY);
     if (raw) {
       const saved: DayStats = JSON.parse(raw);
-      if (saved.date === todayStr() && saved.puzzleIndex === getDailyIndex()) return saved;
+      if (saved.date === todayStr() && saved.puzzleIndex === getDailyInfo().puzzleIndex) return saved;
     }
   } catch {}
   return null;
@@ -102,7 +104,7 @@ function saveStats(stats: AllStats) {
 const ALL_MOVIES = PUZZLES.map(p => p.answer);
 
 export default function App() {
-  const puzzleIndex = getDailyIndex();
+  const { puzzleIndex, dayNumber } = getDailyInfo();
   const puzzle = PUZZLES[puzzleIndex];
 
   const savedToday = loadToday();
@@ -221,7 +223,7 @@ export default function App() {
   function copyResult() {
     const attempts = gameState === "won" ? guesses.length : "X";
     const squares = guesses.map(g => g.correct ? "🟩" : g.skipped ? "⬜" : "🟥").join("");
-    navigator.clipboard.writeText(`🎬 Marquee #${puzzleIndex + 1}\n${puzzle.emojis}\n${attempts}/${MAX_GUESSES} ${squares}\nhttps://marquee.n0va.tech`);
+    navigator.clipboard.writeText(`🎬 Marquee #${dayNumber}\n${puzzle.emojis}\n${attempts}/${MAX_GUESSES} ${squares}\nhttps://marquee.n0va.tech`);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   }
@@ -984,7 +986,7 @@ export default function App() {
               <FilmStrip />
             </div>
             <div className="film-body">
-              <div className="puzzle-badge">#{puzzleIndex + 1}</div>
+              <div className="puzzle-badge">#{dayNumber}</div>
               <div className="puzzle-eyebrow">Guess the Movie</div>
               <span className="emoji-display">{puzzle.emojis}</span>
             </div>
