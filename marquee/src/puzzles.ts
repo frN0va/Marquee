@@ -464,4 +464,329 @@ export const PUZZLES: Puzzle[] = [
     answer: "The Emperor’s New Groove",
     hints: ["Disney comedy", "Turned into a llama", "Buddy road trip"],
   },
+  {
+    emojis: "🧙‍♂️⚡🏰📚🐍",
+    answer: "Harry Potter and the Sorcerer’s Stone",
+    hints: ["Wizarding world", "Hogwarts", "The boy who lived"],
+  },
+  {
+    emojis: "🚢💎🧊❤️🌊",
+    answer: "Titanic",
+    hints: ["Romantic disaster film", "1912 voyage", "Jack and Rose"],
+  },
+  {
+    emojis: "🦖🏝️🚙⚠️🧬",
+    answer: "Jurassic Park",
+    hints: ["Dinosaurs return", "Theme park gone wrong", "1993 blockbuster"],
+  },
+  {
+    emojis: "👻🚫🚗🏙️🔫",
+    answer: "Ghostbusters",
+    hints: ["Supernatural comedy", "Who you gonna call?", "1984 film"],
+  },
+  {
+    emojis: "🦈🌊🚤😱🎣",
+    answer: "Jaws",
+    hints: ["Shark thriller", "Beach town terror", "Spielberg classic"],
+  },
+  {
+    emojis: "🕷️🧑‍🎓🏙️🕸️🦹",
+    answer: "Spider-Man",
+    hints: ["Superhero origin", "Peter Parker", "Friendly neighborhood hero"],
+  },
+  {
+    emojis: "👑🦁🗡️❄️🛡️",
+    answer: "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
+    hints: ["Fantasy adventure", "Magical wardrobe", "Aslan"],
+  },
+  {
+    emojis: "🧠🕵️‍♂️🗺️🍕🐀",
+    answer: "Teenage Mutant Ninja Turtles",
+    hints: ["Pizza-loving heroes", "Sewer team", "Leonardo and friends"],
+  },
+  {
+    emojis: "🎬🦍🏙️🚁💥",
+    answer: "King Kong",
+    hints: ["Giant ape", "Skull Island", "Climbs a skyscraper"],
+  },
+  {
+    emojis: "🪄🧹🧙‍♀️🌪️👠",
+    answer: "The Wizard of Oz",
+    hints: ["1939 classic", "Yellow Brick Road", "There's no place like home"],
+  },
+  {
+    emojis: "🟢👹🫏🏰👸",
+    answer: "Shrek",
+    hints: ["DreamWorks animated film", "Swamp ogre", "Fairy tale parody"],
+  },
+  {
+    emojis: "🦁🦓🦒🛳️🏙️",
+    answer: "Madagascar",
+    hints: ["Animated comedy", "Zoo animals escape", "Move it move it"],
+  },
+  {
+    emojis: "🐼🥋🍜🏯🐉",
+    answer: "Kung Fu Panda",
+    hints: ["DreamWorks film", "Dragon Warrior", "Po"],
+  },
+  {
+    emojis: "🟡👓🍌🦹‍♂️🚀",
+    answer: "Despicable Me",
+    hints: ["Animated comedy", "Former supervillain", "Minions debut"],
+  },
+  {
+    emojis: "🟡🍌🌴🧪🕶️",
+    answer: "Minions",
+    hints: ["Spin-off film", "Banana-loving helpers", "Villain hunt"],
+  },
+  {
+    emojis: "🐉🛡️🧑‍🦱🌊🔥",
+    answer: "How to Train Your Dragon",
+    hints: ["DreamWorks film", "Viking village", "Toothless"],
+  },
+  {
+    emojis: "🧠🦸‍♂️🏙️🔵🤖",
+    answer: "Megamind",
+    hints: ["Animated superhero parody", "Blue-headed villain", "Metro City"],
+  },
+  {
+    emojis: "🧱👮‍♂️🌆😂🚧",
+    answer: "The Lego Movie",
+    hints: ["Animated adventure", "Everything is awesome", "Master Builders"],
+  },
+  {
+    emojis: "🎮🧱🏁🍬🦹",
+    answer: "Wreck-It Ralph",
+    hints: ["Disney animated film", "Arcade game world", "Villain wants to be good"],
+  },
+  {
+    emojis: "🤖❤️🏙️🦸‍♂️🏥",
+    answer: "Big Hero 6",
+    hints: ["Disney animated film", "Inflatable robot", "San Fransokyo"],
+  },
+  {
+    emojis: "🐟🔎🌊🐙🏄",
+    answer: "Finding Dory",
+    hints: ["Pixar sequel", "Memory loss", "Marine life adventure"],
+  },
+  {
+    emojis: "🧝‍♂️🗺️✨👦🗡️",
+    answer: "Onward",
+    hints: ["Pixar fantasy", "Two elf brothers", "Quest for magic"],
+  },
+  {
+    emojis: "🎷👻🌃🧠❤️",
+    answer: "Soul",
+    hints: ["Pixar film", "Jazz musician", "Life purpose theme"],
+  },
+  {
+    emojis: "🔥💧🏙️❤️🌈",
+    answer: "Elemental",
+    hints: ["Pixar film", "Fire and water", "Element City"],
+  },
+  {
+    emojis: "🏴‍☠️⚓🦜🧭💀",
+    answer: "Pirates of the Caribbean: The Curse of the Black Pearl",
+    hints: ["Swashbuckling adventure", "Captain Jack Sparrow", "Cursed treasure"],
+  },
+  {
+    emojis: "🦇🌃🃏💥🏍️",
+    answer: "The Dark Knight",
+    hints: ["Batman film", "Heath Ledger Joker", "Christopher Nolan"],
+  },
+  {
+    emojis: "🛡️❄️🦸‍♂️💥🕵️",
+    answer: "Captain America: The Winter Soldier",
+    hints: ["Marvel film", "Hydra conspiracy", "S.H.I.E.L.D. fallout"],
+  },
+  {
+    emojis: "🧤⚡🪐🦸‍♂️💥",
+    answer: "Avengers: Infinity War",
+    hints: ["Marvel crossover", "Thanos", "Infinity Stones"],
+  },
+  {
+    emojis: "⏳🦸‍♂️💍💜🌍",
+    answer: "Avengers: Endgame",
+    hints: ["Marvel finale", "Time heist", "Battle for the universe"],
+  },
+  {
+    emojis: "🛠️❤️🦾💥🧲",
+    answer: "Iron Man",
+    hints: ["Marvel origin", "Tony Stark", "Arc reactor"],
+  },
+  {
+    emojis: "👑🐾⚫🦸‍♂️🌍",
+    answer: "Black Panther",
+    hints: ["Marvel film", "Wakanda", "Vibranium suit"],
+  },
+  {
+    emojis: "🦝🌌🌳🎵🚀",
+    answer: "Guardians of the Galaxy",
+    hints: ["Marvel space team", "Awesome Mix", "Star-Lord"],
+  },
+  {
+    emojis: "🥊🏛️⚔️👑🩸",
+    answer: "Gladiator",
+    hints: ["Historical epic", "Roman arena", "Are you not entertained?"],
+  },
+  {
+    emojis: "🏠🎄👦🪤🕵️",
+    answer: "Home Alone",
+    hints: ["Holiday comedy", "Kid left behind", "Booby-trapped house"],
+  },
+  {
+    emojis: "💖📓🌧️🛶🕰️",
+    answer: "The Notebook",
+    hints: ["Romantic drama", "Nicholas Sparks adaptation", "Summer love story"],
+  },
+  {
+    emojis: "💅🎓⚖️🐶💖",
+    answer: "Legally Blonde",
+    hints: ["Comedy", "Harvard Law", "Elle Woods"],
+  },
+  {
+    emojis: "👧📓👑💄🚌",
+    answer: "Mean Girls",
+    hints: ["Teen comedy", "High school cliques", "On Wednesdays we wear pink"],
+  },
+  {
+    emojis: "🚗🏜️💀🎸🔥",
+    answer: "Mad Max: Fury Road",
+    hints: ["Post-apocalyptic action", "Desert chase", "2015 film"],
+  },
+  {
+    emojis: "🌍🧑‍🚀💙🪐🌳",
+    answer: "Avatar",
+    hints: ["Sci-fi epic", "Pandora", "James Cameron film"],
+  },
+  {
+    emojis: "❄️⛓️🌹😱👩‍👦",
+    answer: "Misery",
+    hints: ["Psychological thriller", "Stephen King adaptation", "Obsessed fan"],
+  },
+  {
+    emojis: "🚲🌕👦👽🌲",
+    answer: "E.T. the Extra-Terrestrial",
+    hints: ["1982 sci-fi classic", "Alien friend", "Phone home"],
+  },
+  {
+    emojis: "🗺️💀🏴‍☠️👦⚓",
+    answer: "The Goonies",
+    hints: ["1985 adventure", "Treasure hunt", "Kids on a quest"],
+  },
+  {
+    emojis: "🤖🔫🕶️🔥⏳",
+    answer: "The Terminator",
+    hints: ["1984 sci-fi action", "Time-travel assassin", "I'll be back"],
+  },
+  {
+    emojis: "🤖🧒🏍️💥⛓️",
+    answer: "Terminator 2: Judgment Day",
+    hints: ["1991 sequel", "Liquid metal villain", "Protect John Connor"],
+  },
+  {
+    emojis: "👽🚀🪖🔥😱",
+    answer: "Aliens",
+    hints: ["1986 sci-fi action", "Ripley returns", "Xenomorph swarm"],
+  },
+  {
+    emojis: "🌴🪖👽🎯💀",
+    answer: "Predator",
+    hints: ["1987 action sci-fi", "Jungle mission", "Invisible hunter"],
+  },
+  {
+    emojis: "🚔🎤🌴😎💰",
+    answer: "Beverly Hills Cop",
+    hints: ["1984 action comedy", "Eddie Murphy", "Detroit cop in LA"],
+  },
+  {
+    emojis: "🚓👮‍♂️💣🧨🤝",
+    answer: "Lethal Weapon",
+    hints: ["1987 buddy cop film", "Riggs and Murtaugh", "Action-comedy classic"],
+  },
+  {
+    emojis: "✈️👨‍⚕️🧳🧠🏆",
+    answer: "Rain Man",
+    hints: ["1988 drama", "Road trip brothers", "Dustin Hoffman Oscar role"],
+  },
+  {
+    emojis: "📚🏫🍎🧑‍🏫🕊️",
+    answer: "Dead Poets Society",
+    hints: ["1989 drama", "Prep school", "Carpe diem"],
+  },
+  {
+    emojis: "💃🕺🏕️❤️🎵",
+    answer: "Dirty Dancing",
+    hints: ["1987 romance", "Summer resort", "Nobody puts Baby in a corner"],
+  },
+  {
+    emojis: "💄🏨❤️🧑‍💼🌹",
+    answer: "Pretty Woman",
+    hints: ["1990 romantic comedy", "Hollywood Boulevard", "Julia Roberts"],
+  },
+  {
+    emojis: "👨‍👧🎭🏠😂🧹",
+    answer: "Mrs. Doubtfire",
+    hints: ["1993 family comedy", "Robin Williams", "Disguise as nanny"],
+  },
+  {
+    emojis: "🎭💚🐶💼🤣",
+    answer: "The Mask",
+    hints: ["1994 comedy", "Jim Carrey", "Mischievous green face"],
+  },
+  {
+    emojis: "🔪📞👻🏫😱",
+    answer: "Scream",
+    hints: ["1996 slasher", "Ghostface", "Meta horror film"],
+  },
+  {
+    emojis: "👦👻🚪🗣️😨",
+    answer: "The Sixth Sense",
+    hints: ["1999 thriller", "M. Night Shyamalan", "I see dead people"],
+  },
+  {
+    emojis: "🕵️‍♂️🗂️🩸🔍🗣️",
+    answer: "The Silence of the Lambs",
+    hints: ["1991 thriller", "Clarice Starling", "Hannibal Lecter"],
+  },
+  {
+    emojis: "👔💵📈🍝🔫",
+    answer: "Goodfellas",
+    hints: ["1990 crime drama", "Martin Scorsese", "Mob life story"],
+  },
+  {
+    emojis: "💼💉🍔🔫🎬",
+    answer: "Pulp Fiction",
+    hints: ["1994 crime film", "Quentin Tarantino", "Nonlinear story"],
+  },
+  {
+    emojis: "🕵️‍♂️🧢🚢💬👹",
+    answer: "The Usual Suspects",
+    hints: ["1995 crime mystery", "Heist gone wrong", "Keyser Soze"],
+  },
+  {
+    emojis: "🪖🌊🇫🇷🎖️💥",
+    answer: "Saving Private Ryan",
+    hints: ["1998 war film", "WWII mission", "Spielberg directed"],
+  },
+  {
+    emojis: "📚🔒⛓️✨🟢",
+    answer: "The Green Mile",
+    hints: ["1999 prison drama", "Stephen King adaptation", "Death row miracle"],
+  },
+  {
+    emojis: "🧟‍♂️🏺🏜️🐪⚔️",
+    answer: "The Mummy",
+    hints: ["1999 adventure", "Ancient Egypt", "Brendan Fraser"],
+  },
+  {
+    emojis: "🌪️🚚🌾📡⚠️",
+    answer: "Twister",
+    hints: ["1996 disaster film", "Storm chasers", "Tornado research"],
+  },
+  {
+    emojis: "🚆👨‍⚕️🔫🏃‍♂️🕵️",
+    answer: "The Fugitive",
+    hints: ["1993 thriller", "Wrongly accused doctor", "One-armed man clue"],
+  },
 ];
